@@ -43,11 +43,36 @@
                 <div class="tile">
                     <div class="tile is-parent" style="height: 29vh">
                         <article class="tile is-child notification is-info">
-                                <p class="title">Wide tile</p>
-                                <p class="subtitle">Aligned with the right tile</p>
-                                <div class="content">
+                                <p class="title is-size-4">Stock Data</p>
+                                <!-- subtitle was here -->
+                                <!-- <div id="stock-data-container" class="content container is-vertical"> -->
                                     <!-- Content -->
-                                </div>
+                                    <div class="columns is-multiline is-mobile is-size-7">
+                                        <div id="tickerName" class="column is-one-quarter">
+                                        </div>
+                                        <div id="exchange" class="column is-one-quarter">
+                                        </div>
+                                        <div id="price" class="column is-one-quarter">
+                                        </div>
+                                        <div id="dayChange" class="column is-one-quarter">
+                                        </div>
+                                        <div id="previousClose" class="column is-one-quarter">
+                                        </div>
+                                        <div id="openPrice" class="column is-one-quarter">
+                                        </div>
+                                        <div id="dayHigh" class="column is-one-quarter">
+                                        </div>
+                                        <div id="dayLow" class="column is-one-quarter">
+                                        </div>
+                                        <div id="volume" class="column is-one-quarter">
+                                        </div>
+                                        <div id="yearHigh" class="column is-one-quarter">
+                                        </div>
+                                        <div id="yearLow" class="column is-one-quarter">
+                                        </div>
+                                        <div id="marketCap" class="column is-one-quarter">
+                                        </div>
+                                    </div>
                         </article>
                     </div>
                 </div>
@@ -84,6 +109,8 @@
             <!--Only Asika works above here  -->
 
             <!-- Add any necessary script tags here -->
+            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
             <script src="./assets/JS/stockdata.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script src="./assets/JS/chart.js"></script>
