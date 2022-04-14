@@ -1,12 +1,13 @@
 // api key for stockdata.org
-const apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr"
-// var tickerInput = $(".input").val().trim();
-let tickerInput = "AMD";
+let apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr"
 
+let stockSearch = document.querySelector("#search-button");
 
+stockSearch.addEventListener("click", getStockData);
 
 
 function getStockData () {
+    let tickerInput = document.querySelector("#tickerInput").value;
     let stockDataUrl = "https://api.stockdata.org/v1/data/quote?symbols=" + tickerInput + "&api_token=" + apiKey;
     fetch(stockDataUrl)
         .then(function (response) {
