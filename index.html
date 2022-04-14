@@ -21,7 +21,7 @@
             <div class="navbar-end pt-5 pr-3">
                 <form id="addStockForm">
                     <input class="input is-rounded" id="tickerInput" type="text" placeholder="Stock Symbol" >
-                    <button id="search-button" class="button is-info" type="click">&#128269;</button>
+                    <button id="search-button" class="button is-info" type="button">&#128269;</button>
                     <input type="submit" id="add-stock" value="Add to Watchlist"> 
                 </form>
             </div>
@@ -81,6 +81,17 @@
                         <section class="stock-list">
                             <p class="title">Watchlist</p>
                             <div id="ticket"></div>  
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th><abbr tittle="Stock">Company</abbr></th>
+                                        <th><abbr tittle="Price">Price</abbr></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <th tittle="Time">Time:</th>
+                                </tfoot>
+                            </table>
                         </section>   
                     </article>
                 </div>
