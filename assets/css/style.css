@@ -1,7 +1,11 @@
-#tittleLaw{
+/* #tittleLaw{
     color: blue;
     justify-content: center;
     position: fixed;
+} */
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .chart-container {
@@ -12,3 +16,42 @@
     width: 100%;
   }
 
+.navbar-item {
+    border-radius: 25px;
+}
+
+.navbar {
+    background-color: #345b64;
+}
+
+.title {
+    color: #a9abae;
+}
+
+.tile {
+    border-radius: 25px;
+}
+
+button {
+    border-radius: 25px;
+}
+
+.card {
+    border-radius: 25px;
+}
+
+body {
+    background-color: rgba(6, 24, 32, 255);
+}
+
+.newsTile {
+    background-color: rgba(169, 171, 174, 255);
+}
+
+.stockDataTile {
+    background-color: rgba(169, 171, 174, 255);
+}
+
+.stock-list, .watchListTile {
+    background-color: rgba(169, 171, 174, 255);
+}
