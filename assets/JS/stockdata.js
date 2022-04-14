@@ -5,6 +5,7 @@ let tickerInput = "AMD";
 
 
 
+
 function getStockData () {
     let stockDataUrl = "https://api.stockdata.org/v1/data/quote?symbols=" + tickerInput + "&api_token=" + apiKey;
     fetch(stockDataUrl)
@@ -45,4 +46,4 @@ function getStockData () {
 }
 
 
-getStockData();
+// getStockData();
