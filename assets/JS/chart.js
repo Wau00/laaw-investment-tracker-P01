@@ -51,7 +51,9 @@ function displayToChart(dataHistoric) {
     //grab the close price for that day (data[i].data.close) and append it to the 'data' object below --> (data.datasets[0].data.push(data[i].data.close))
     data.datasets[0].data.push(dataHistoric.data[i].data.close);
     //grab the date (data[i].date) and append it to the empty 'labels' array below --> (labels.push(data[i].date))
-    labels.push(dataHistoric.data[i].date);
+    let stockDate = dataHistoric.data[i].date
+    
+    labels.push(stockDate);
   }
  data.labels = labels;
   console.log(data);
