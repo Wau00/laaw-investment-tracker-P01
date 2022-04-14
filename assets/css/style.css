@@ -4,6 +4,10 @@
     position: fixed;
 } */
 
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .chart-container {
     display: flex;
     
@@ -14,6 +18,14 @@
 
 .navbar-item {
     border-radius: 25px;
+}
+
+.navbar {
+    background-color: #345b64;
+}
+
+.title {
+    color: #a9abae;
 }
 
 .tile {
@@ -29,13 +41,17 @@ button {
 }
 
 body {
-    background-color: rgb(77, 77, 77);
+    background-color: rgba(6, 24, 32, 255);
 }
 
 .newsTile {
-    background-color: rgb(182, 204, 178);
+    background-color: rgba(169, 171, 174, 255);
 }
 
 .stockDataTile {
-    background-color: rgb(182, 204, 178);
+    background-color: rgba(169, 171, 174, 255);
+}
+
+.stock-list, .watchListTile {
+    background-color: rgba(169, 171, 174, 255);
 }
