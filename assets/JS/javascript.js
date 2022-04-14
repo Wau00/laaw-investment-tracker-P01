@@ -1,4 +1,4 @@
-var stocks = $("#watchList");
+var stocks = $("Stock Symbol");
 var watchedStocks = "";
 
 var searchedStocks =(localstorage.getItem("stocks"))?JSON.parse(localStorage.getItem("stocks")):[];
@@ -7,7 +7,7 @@ var searchedStocks =(localstorage.getItem("stocks"))?JSON.parse(localStorage.get
 function handleAddButton (event){
     event.preventDefault();
     
-    watchedStocks = $("#textWatchList").val().trim();
+    watchedStocks = $("Stock Symbol").val().trim();
     if(!watchedStocks.includes(watchedStocks)){
         searchedStocks.push(watchedStocks)
     }
