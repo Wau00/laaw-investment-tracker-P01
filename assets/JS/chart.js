@@ -1,4 +1,4 @@
-const searchButton = document.querySelector("#searchButton");
+const searchButton = document.querySelector("#search-button");
 
 searchButton.addEventListener("click", getChartData);
 
