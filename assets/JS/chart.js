@@ -1,21 +1,36 @@
+// $("#searchButton").on("click", getChartData);
+
+function getChartData() {
+  // let ticker = $("#tickerInput").val();
+  let ticker = "MSFT";
+  // let currentYearAndMonth = moment().format("YYYY-MM");
+  let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${ticker}&interval=month&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
+
+  fetch(chartDataURL).then(function(response) {
+    return response.json();
+  }).then(function (data) {
+    console.log(data);
+  });
+};
+
 const labels = [
-  'Jun 30 `17',
-  'Sep 30 `17',
-  'Dec 31 `17',
-  'Mar 31 `18',
-  'Jun 30 `18',
-  'Sep 30 `18',
-  'Dec 31 `18',
-  'Mar 31 `19',
-  'Jun 30 `19',
-  'Sep 30 `19',
-  'Dec 31 `19',
-  'Mar 31 `20',
-  'Jun 30 `20',
-  'Sep 30 `20',
-  'Dec 31 `20',
-  'Mar 31 `21',
-  'Jun 30 `21',
+  moment().subtract(17, "quarter").format("MMM YY"),
+  moment().subtract(16, "quarter").format("MMM YY"),
+  moment().subtract(15, "quarter").format("MMM YY"),
+  moment().subtract(14, "quarter").format("MMM YY"),
+  moment().subtract(13, "quarter").format("MMM YY"),
+  moment().subtract(12, "quarter").format("MMM YY"),
+  moment().subtract(11, "quarter").format("MMM YY"),
+  moment().subtract(10, "quarter").format("MMM YY"),
+  moment().subtract(9, "quarter").format("MMM YY"),
+  moment().subtract(8, "quarter").format("MMM YY"),
+  moment().subtract(7, "quarter").format("MMM YY"),
+  moment().subtract(6, "quarter").format("MMM YY"),
+  moment().subtract(5, "quarter").format("MMM YY"),
+  moment().subtract(4, "quarter").format("MMM YY"),
+  moment().subtract(3, "quarter").format("MMM YY"),
+  moment().subtract(2, "quarter").format("MMM YY"),
+  moment().subtract(1, "quarter").format("MMM YY"),
   moment().format("MMM YY"),
 ];
 
@@ -44,7 +59,4 @@ const myChart = new Chart(
   config
 );
 
-var march17 = moment().format("ddd, MMMM Do YYYY");
-console.log(moment().quarter())
-
-var june17 = moment().add(1, 'days').format("ddd, MMMM Do YYYY");
+getChartData();
