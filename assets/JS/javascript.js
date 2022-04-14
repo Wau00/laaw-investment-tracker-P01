@@ -1,38 +1,45 @@
-var stocks = $("Stock Symbol");
-var watchedStocks = "";
+window.addEventListener('load', function(){
+    var stockForm = document.querySelector("#addStockForm");
+    var stockAdd = document.querySelector("#new-stock");
+    var ticketEl = document.querySelector("#ticket");
 
-var searchedStocks =(localstorage.getItem("stocks"))?JSON.parse(localStorage.getItem("stocks")):[];
+    stockForm.addEventListener('submit', function(event){
+        event.preventDefault();
+        
+        let ticket = stockAdd.value;    
 
+        let watchlistForm = document.createElement("div");
+            watchlistForm.classList.add("ticket");
 
-function handleAddButton (event){
-    event.preventDefault();
-    
-    watchedStocks = $("Stock Symbol").val().trim();
-    if(!watchedStocks.includes(watchedStocks)){
-        searchedStocks.push(watchedStocks)
-    }
-    else{
-        return;
-    }
-    watchListAdded();
+        let watchlistContent = document.createElement("div");   
+            watchlistContent.classList.add("content");
+            
 
-    localStorage.setItem("stocks",JSON.stringify())
+         watchlistForm.appendChild(watchlistContent);
 
-}
+        let stockInput = document.createElement("input");
+            stockInput.classList.add("text");
+            stockInput.type = "text";
+            stockInput.value = ticket;
+            
+        watchlistContent.appendChild(stockInput)
+        
+        let watchlistActions = document.createElement("div");
+        watchlistActions.classList.add("actions");
 
-function watchListAdded () {
-    stocks.html("")
-    $(searchedStocks).each(function (i, el) {
-        stocks.prepend("<li>" + el + "</li>");
+        let watchListRemove = document.createElement("button");
+        watchListRemove.classList.add("remove");
+        watchListRemove.innerHTML = "Remove";
+
+        watchlistActions.appendChild(watchListRemove);
+        watchlistForm.appendChild(watchlistActions);
+         
+        ticket.value = ""
+        ticketEl.appendChild(watchlistForm);
+        
+        watchListRemove.addEventListener('click', function(){
+        ticketEl.removeChild(watchlistForm);
+
+        });
     })
-    $("li").attr("class", "list-group-item list-group-item-action");
-
-    $("li").on("click", function () {
-        var listItem = $(this).text();
-        console.log($(this).text());
-        watchedStocks = listItem;
-        console.log(watchedStocks);
-    });
-};
-
-
+})
