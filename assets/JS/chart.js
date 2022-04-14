@@ -17,7 +17,8 @@ function getChartData() {
 
 function displayToChart(data) {
   for (let i = 0; i < data.data.length; i++) {
-    
+    //grab the close price for that day (data[i].data.close) and append it to the 'data' object below --> (data.datasets[0].data.push(data[i].data.close))
+    //grab the date (data[i].date) and append it to the empty 'labels' array below --> (labels.push(data[i].date))
   }
 }
 
