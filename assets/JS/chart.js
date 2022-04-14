@@ -1,10 +1,11 @@
-// $("#searchButton").on("click", getChartData);
+const searchButton = document.querySelector("#searchButton");
+
+searchButton.addEventListener("click", getChartData);
 
 function getChartData() {
-  // let ticker = $("#tickerInput").val();
-  let ticker = "MSFT";
-  // let currentYearAndMonth = moment().format("YYYY-MM");
-  let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${ticker}&interval=month&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
+  let tickerInput = document.querySelector("#tickerInput").value;
+  let currentYearAndMonth = moment().format("YYYY-MM");
+  let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${tickerInput}&date_to=${currentYearAndMonth}&interval=month&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
 
   fetch(chartDataURL).then(function(response) {
     return response.json();
@@ -58,5 +59,3 @@ const myChart = new Chart(
   document.getElementById('myChart'),
   config
 );
-
-getChartData();
