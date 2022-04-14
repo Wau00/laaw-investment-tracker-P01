@@ -2,12 +2,19 @@
 var api_token = "nlImfVRma9P5KANB90CtXrsSfaJOPg8quhKGBeqr"
 
 // var tickerInput 
-var symbolInput = "AMZN";
 
-var api_url = 'https://api.marketaux.com/v1/news/all?symbols=' + symbolInput + '&filter_entities=true&language=en&api_token=' + api_token; 
-async function getStockNews(){
-    var response = await fetch(api_url)
-    var dataNews = await response.json();
+var searchInput = document.querySelector("#search-button");
+searchInput.addEventListener("click", getStockNews);
+
+
+function getStockNews(){
+   let symbolInput = document.querySelector("#tickerInput").value;
+   let  api_url = 'https://api.marketaux.com/v1/news/all?symbols=' + symbolInput + '&filter_entities=true&language=en&api_token=' + api_token; 
+    fetch(api_url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(dataNews) {
     console.log(dataNews);
     console.log(dataNews.data[0].title);
 
@@ -55,7 +62,7 @@ async function getStockNews(){
     $('#imageZ').attr("src",newsImageZ);
 
     console.log(newsUrlX);
+    })
 }
-
 getStockNews();
 

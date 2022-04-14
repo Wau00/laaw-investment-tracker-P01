@@ -1,6 +1,6 @@
 window.addEventListener('load', function(){
     var stockForm = document.querySelector("#addStockForm");
-    var stockAdd = document.querySelector("#new-stock");
+    var stockAdd = document.querySelector("#tickerInput");
     var ticketEl = document.querySelector("#ticket");
 
     stockForm.addEventListener('submit', function(event){
