@@ -1,8 +1,8 @@
-#tittleLaw{
+/* #tittleLaw{
     color: blue;
     justify-content: center;
     position: fixed;
-}
+} */
 
 .chart-container {
     display: flex;
@@ -12,3 +12,30 @@
     width: 100%;
   }
 
+.navbar-item {
+    border-radius: 25px;
+}
+
+.tile {
+    border-radius: 25px;
+}
+
+button {
+    border-radius: 25px;
+}
+
+.card {
+    border-radius: 25px;
+}
+
+body {
+    background-color: rgb(77, 77, 77);
+}
+
+.newsTile {
+    background-color: rgb(182, 204, 178);
+}
+
+.stockDataTile {
+    background-color: rgb(182, 204, 178);
+}
