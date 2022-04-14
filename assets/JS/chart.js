@@ -9,18 +9,22 @@ function getChartData() {
 
   fetch(chartDataURL).then(function(response) {
     return response.json();
-  }).then(function (data) {
-    console.log(data);
-    displayToChart(data);
+  }).then(function (dataHistoric) {
+    console.log(dataHistoric);
+    displayToChart(dataHistoric);
   });
 };
 
-function displayToChart(data) {
-  for (let i = 0; i < data.data.length; i++) {
+function displayToChart(dataHistoric) {
+  for (let i = 0; i < dataHistoric.data.length; i++) {
     //grab the close price for that day (data[i].data.close) and append it to the 'data' object below --> (data.datasets[0].data.push(data[i].data.close))
+    data.datasets[0].data.push(dataHistoric.data[i].data.close);
     //grab the date (data[i].date) and append it to the empty 'labels' array below --> (labels.push(data[i].date))
+    labels.push(dataHistoric.data[i].date);
   }
-}
+  console.log(labels);
+  console.log(data);
+};
 
 const labels = [
   // moment().subtract(17, "quarter").format("MMM YY"),
@@ -46,7 +50,7 @@ const labels = [
 const data = {
   labels: labels,
   datasets: [{
-    label: 'My First dataset',
+    label: 'Stock Price',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
     data: [],
