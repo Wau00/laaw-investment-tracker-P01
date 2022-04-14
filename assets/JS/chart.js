@@ -16,58 +16,57 @@ function getChartData() {
 };
 
 function displayToChart(dataHistoric) {
+  const labels = [
+    // moment().subtract(17, "quarter").format("MMM YY"),
+    // moment().subtract(16, "quarter").format("MMM YY"),
+    // moment().subtract(15, "quarter").format("MMM YY"),
+    // moment().subtract(14, "quarter").format("MMM YY"),
+    // moment().subtract(13, "quarter").format("MMM YY"),
+    // moment().subtract(12, "quarter").format("MMM YY"),
+    // moment().subtract(11, "quarter").format("MMM YY"),
+    // moment().subtract(10, "quarter").format("MMM YY"),
+    // moment().subtract(9, "quarter").format("MMM YY"),
+    // moment().subtract(8, "quarter").format("MMM YY"),
+    // moment().subtract(7, "quarter").format("MMM YY"),
+    // moment().subtract(6, "quarter").format("MMM YY"),
+    // moment().subtract(5, "quarter").format("MMM YY"),
+    // moment().subtract(4, "quarter").format("MMM YY"),
+    // moment().subtract(3, "quarter").format("MMM YY"),
+    // moment().subtract(2, "quarter").format("MMM YY"),
+    // moment().subtract(1, "quarter").format("MMM YY"),
+    // moment().format("MMM YY"),
+  ];
+  
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Stock Price',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [],
+    }]
+  };
+
   for (let i = 0; i < dataHistoric.data.length; i++) {
     //grab the close price for that day (data[i].data.close) and append it to the 'data' object below --> (data.datasets[0].data.push(data[i].data.close))
     data.datasets[0].data.push(dataHistoric.data[i].data.close);
     //grab the date (data[i].date) and append it to the empty 'labels' array below --> (labels.push(data[i].date))
     labels.push(dataHistoric.data[i].date);
   }
-  console.log(labels);
+ data.labels = labels;
   console.log(data);
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    }
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
 };
-
-const labels = [
-  // moment().subtract(17, "quarter").format("MMM YY"),
-  // moment().subtract(16, "quarter").format("MMM YY"),
-  // moment().subtract(15, "quarter").format("MMM YY"),
-  // moment().subtract(14, "quarter").format("MMM YY"),
-  // moment().subtract(13, "quarter").format("MMM YY"),
-  // moment().subtract(12, "quarter").format("MMM YY"),
-  // moment().subtract(11, "quarter").format("MMM YY"),
-  // moment().subtract(10, "quarter").format("MMM YY"),
-  // moment().subtract(9, "quarter").format("MMM YY"),
-  // moment().subtract(8, "quarter").format("MMM YY"),
-  // moment().subtract(7, "quarter").format("MMM YY"),
-  // moment().subtract(6, "quarter").format("MMM YY"),
-  // moment().subtract(5, "quarter").format("MMM YY"),
-  // moment().subtract(4, "quarter").format("MMM YY"),
-  // moment().subtract(3, "quarter").format("MMM YY"),
-  // moment().subtract(2, "quarter").format("MMM YY"),
-  // moment().subtract(1, "quarter").format("MMM YY"),
-  // moment().format("MMM YY"),
-];
-
-const data = {
-  labels: labels,
-  datasets: [{
-    label: 'Stock Price',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [],
-  }]
-};
-
-const config = {
-  type: 'line',
-  data: data,
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    
-  }
-};
-
-const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-);
