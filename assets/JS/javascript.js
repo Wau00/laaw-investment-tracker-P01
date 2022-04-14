@@ -19,27 +19,27 @@ window.addEventListener('load', function(){
 
         let stockInput = document.createElement("input");
             stockInput.classList.add("text");
-            stockInput.type = "text";
+            stockInput.type = "button";
             stockInput.value = ticket;
             
         watchlistContent.appendChild(stockInput)
         
-        let watchlistActions = document.createElement("div");
-        watchlistActions.classList.add("actions");
+        // let watchlistActions = document.createElement("button");
+        // watchlistActions.classList.add("actions");
 
-        let watchListRemove = document.createElement("button");
-        watchListRemove.classList.add("remove");
-        watchListRemove.innerHTML = "Remove";
+        // let watchListRemove = document.createElement("button");
+        // watchListRemove.classList.add("remove");
+        // watchListRemove.innerHTML = "Remove";
 
-        watchlistActions.appendChild(watchListRemove);
-        watchlistForm.appendChild(watchlistActions);
+        // watchlistActions.appendChild(watchListRemove);
+        // watchlistForm.appendChild(watchlistActions);
          
         ticket.value = ""
         ticketEl.appendChild(watchlistForm);
         
-        watchListRemove.addEventListener('click', function(){
-        ticketEl.removeChild(watchlistForm);
+        // watchListRemove.addEventListener('click', function(){
+        // ticketEl.removeChild(watchlistForm);
 
-        });
+        // });
     })
 })
