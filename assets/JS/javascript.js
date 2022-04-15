@@ -1,45 +1,70 @@
-window.addEventListener('load', function(){
-    var stockForm = document.querySelector("#addStockForm");
-    var stockAdd = document.querySelector("#tickerInput");
-    var ticketEl = document.querySelector("#ticket");
 
-    stockForm.addEventListener('submit', function(event){
-        event.preventDefault();
+var stockForm = document.querySelector("#addStockForm");
+var stockAdd = document.querySelector("#tickerInput");
+var ticketEl = document.querySelector("#ticket-text");
+var deleteBtn = document.querySelector("#cleanBtn")
+var tickets = [];
+
+//
+function getTicket() {
+    ticketEl.innerHTML=""
+    for (var i=0; i < tickets.length; i++){
+    var ticketVal = tickets[i];
+    var content = document.createElement("button");
+        content.classList.add("buttons");
+        content.textContent = ticketVal;
+        // content.setAttribute("value",i);
+        content.setAttribute('id','btnSelect');
+        ticketEl.appendChild(content);
         
-        let ticket = stockAdd.value;    
+    }
+}  
 
-        let watchlistForm = document.createElement("div");
-            watchlistForm.classList.add("ticket");
+function storeTicket(){
+    var storedTickets = JSON.parse(localStorage.getItem("tickets"));
+    if(storedTickets !== null){
+    tickets = storedTickets    
+    }
+    getTicket();
+}
 
-        let watchlistContent = document.createElement("div");   
-            watchlistContent.classList.add("content");
-            
+function ticketStore () {
+    localStorage.setItem("tickets", JSON.stringify(tickets));
+}
 
-         watchlistForm.appendChild(watchlistContent);
+stockForm.addEventListener("submit", function(event){
+    event.preventDefault();
 
-        let stockInput = document.createElement("input");
-            stockInput.classList.add("text");
-            stockInput.type = "button";
-            stockInput.value = ticket;
-            
-        watchlistContent.appendChild(stockInput)
-        
-        // let watchlistActions = document.createElement("button");
-        // watchlistActions.classList.add("actions");
+var stockAddText = stockAdd.value.trim();
 
-        // let watchListRemove = document.createElement("button");
-        // watchListRemove.classList.add("remove");
-        // watchListRemove.innerHTML = "Remove";
+if (stockAddText === ""){
+    return;
+}
+    if(stockAddText.length > 4){
+    return;
+    }
+    tickets.push(stockAddText);
+    
 
-        // watchlistActions.appendChild(watchListRemove);
-        // watchlistForm.appendChild(watchlistActions);
-         
-        ticket.value = ""
-        ticketEl.appendChild(watchlistForm);
-        
-        // watchListRemove.addEventListener('click', function(){
-        // ticketEl.removeChild(watchlistForm);
+    ticketStore();
+    getTicket();
 
-        // });
-    })
+});
+
+ticketEl.addEventListener('click', function(){
+        ticketStore();
+        getTicket();
+});
+
+storeTicket()
+
+deleteBtn.addEventListener('click', function(){
+    localStorage.clear('tickets', 'tickets');
+    location.reload();
 })
+
+// ticketEl.addEventListener('click', function(){
+//  let newInput = document.querySelector('#btnSelect').value;
+//  console.log(newInput);
+
+// })
