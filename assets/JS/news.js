@@ -15,9 +15,7 @@ function getStockNews(){
         return response.json();
     })
     .then(function(dataNews) {
-    console.log(dataNews);
-    console.log(dataNews.data[0].title);
-
+    
     // First News
     let newsTitleX = dataNews.data[0].title
     let newsDescrX = dataNews.data[0].description
@@ -61,8 +59,7 @@ function getStockNews(){
     $('#sourceZ').attr("href",newsUrlZ);
     $('#imageZ').attr("src",newsImageZ);
 
-    console.log(newsUrlX);
+   
     })
 }
 getStockNews();
-
