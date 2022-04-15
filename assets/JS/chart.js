@@ -1,11 +1,14 @@
 const searchButton = document.querySelector("#search-button");
 
+let myChart;
+
+searchButton.addEventListener("click", destroyChart);
 searchButton.addEventListener("click", getChartData);
 
 function getChartData() {
   let tickerInput = document.querySelector("#tickerInput").value;
   let currentYearAndMonth = moment().format("YYYY-MM");
-  let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${tickerInput}&date_to=${currentYearAndMonth}&interval=quarter&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
+  let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${tickerInput}&date_to=${currentYearAndMonth}&interval=month&sort=asc&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
 
   fetch(chartDataURL).then(function(response) {
     return response.json();
@@ -16,43 +19,22 @@ function getChartData() {
 };
 
 function displayToChart(dataHistoric) {
-  const labels = [
-    // moment().subtract(17, "quarter").format("MMM YY"),
-    // moment().subtract(16, "quarter").format("MMM YY"),
-    // moment().subtract(15, "quarter").format("MMM YY"),
-    // moment().subtract(14, "quarter").format("MMM YY"),
-    // moment().subtract(13, "quarter").format("MMM YY"),
-    // moment().subtract(12, "quarter").format("MMM YY"),
-    // moment().subtract(11, "quarter").format("MMM YY"),
-    // moment().subtract(10, "quarter").format("MMM YY"),
-    // moment().subtract(9, "quarter").format("MMM YY"),
-    // moment().subtract(8, "quarter").format("MMM YY"),
-    // moment().subtract(7, "quarter").format("MMM YY"),
-    // moment().subtract(6, "quarter").format("MMM YY"),
-    // moment().subtract(5, "quarter").format("MMM YY"),
-    // moment().subtract(4, "quarter").format("MMM YY"),
-    // moment().subtract(3, "quarter").format("MMM YY"),
-    // moment().subtract(2, "quarter").format("MMM YY"),
-    // moment().subtract(1, "quarter").format("MMM YY"),
-    // moment().format("MMM YY"),
-  ];
-  
+  const labels = [];
+
   const data = {
     labels: labels,
     datasets: [{
       label: 'Stock Price',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: "#345b64",
+      borderColor: '#a9abae', 
       data: [],
     }]
   };
 
   for (let i = 0; i < dataHistoric.data.length; i++) {
-    //grab the close price for that day (data[i].data.close) and append it to the 'data' object below --> (data.datasets[0].data.push(data[i].data.close))
     data.datasets[0].data.push(dataHistoric.data[i].data.close);
-    //grab the date (data[i].date) and append it to the empty 'labels' array below --> (labels.push(data[i].date))
-    let stockDate = dataHistoric.data[i].date
-    
+    let stockDate = dataHistoric.data[i].date;
+    stockDate = stockDate.slice(0, 7);
     labels.push(stockDate);
   }
  data.labels = labels;
@@ -67,8 +49,15 @@ function displayToChart(dataHistoric) {
     }
   };
 
-  const myChart = new Chart(
+  myChart = new Chart(
     document.getElementById('myChart'),
     config
   );
+  
 };
+
+function destroyChart() {
+  if(myChart != null){
+    myChart.destroy();
+ }
+}
