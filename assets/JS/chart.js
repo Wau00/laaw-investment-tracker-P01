@@ -13,7 +13,6 @@ function getChartData() {
   fetch(chartDataURL).then(function(response) {
     return response.json();
   }).then(function (dataHistoric) {
-    console.log(dataHistoric);
     displayToChart(dataHistoric);
   });
 };
@@ -38,7 +37,6 @@ function displayToChart(dataHistoric) {
     labels.push(stockDate);
   }
  data.labels = labels;
-  console.log(data);
 
   const config = {
     type: 'line',
