@@ -1,7 +1,6 @@
-// api key for marketaux.com
+
 var api_token = "nlImfVRma9P5KANB90CtXrsSfaJOPg8quhKGBeqr"
 
-// var tickerInput 
 
 var searchInput = document.querySelector("#search-button");
 searchInput.addEventListener("click", getStockNews);

@@ -27,159 +27,147 @@
             </div>
         </nav>       
         
-                <!--Only Walter works below here  -->
-            <div class="tile is-ancestor tile">    
-                <!--Only Andrew / Lucca works below here  -->
-                <div class="tile is-vertical is-9">
-                    <div class="tile is-parent" style="height: 29vh">
-                        <article class="tile is-child notification stockDataTile">
-                                <p class="title is-size-4">STOCK DATA</p>
-                                <!-- subtitle was here -->
-                                <!-- <div id="stock-data-container" class="content container is-vertical"> -->
-                                    <!-- Content -->
-                                    <div class="columns is-multiline is-mobile is-size-6">
-                                        <div id="tickerName" class="column is-one-quarter">
-                                        </div>
-                                        <div id="exchange" class="column is-one-quarter">
-                                        </div>
-                                        <div id="price" class="column is-one-quarter">
-                                        </div>
-                                        <div id="dayChange" class="column is-one-quarter">
-                                        </div>
-                                        <div id="previousClose" class="column is-one-quarter">
-                                        </div>
-                                        <div id="openPrice" class="column is-one-quarter">
-                                        </div>
-                                        <div id="dayHigh" class="column is-one-quarter">
-                                        </div>
-                                        <div id="dayLow" class="column is-one-quarter">
-                                        </div>
-                                        <div id="volume" class="column is-one-quarter">
-                                        </div>
-                                        <div id="yearHigh" class="column is-one-quarter">
-                                        </div>
-                                        <div id="yearLow" class="column is-one-quarter">
-                                        </div>
-                                        <div id="marketCap" class="column is-one-quarter">
-                                        </div>
+
+        <div class="tile is-ancestor tile">    
+            <div class="tile is-vertical is-9">
+                <div class="tile is-parent" style="height: 29vh">
+                    <article class="tile is-child notification stockDataTile">
+                            <p class="title is-size-4">STOCK DATA</p>
+                                <div class="columns is-multiline is-mobile is-size-6">
+                                    <div id="tickerName" class="column is-one-quarter">
                                     </div>
-                        </article>
-                    </div>
-                    <div class="tile is-child" style="height: 29vh">
-                        <article class="tile is-child notification is-light" style="position: relative;">
-                            <div class="chart-container container" style="width: 200; height: 200">
-                                <canvas id="myChart"></canvas>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            
-                <!-- Only Andrew / Lucca works above here  -->
-                <!-- Only Asika works below here  -->
-                <div class="tile is-parent">
-                    <article class="tile is-child notification watchListTile">
-                        <section class="stock-list">
-                            <p class="title is-size-4" id="storage">WATCHLIST</p>
-                            
-                            <div class= card>
-                                <div class="card-content">
-                                    <div id="ticket-text" class="content">
-                                        
+                                    <div id="exchange" class="column is-one-quarter">
+                                    </div>
+                                    <div id="price" class="column is-one-quarter">
+                                    </div>
+                                    <div id="dayChange" class="column is-one-quarter">
+                                    </div>
+                                    <div id="previousClose" class="column is-one-quarter">
+                                    </div>
+                                    <div id="openPrice" class="column is-one-quarter">
+                                    </div>
+                                    <div id="dayHigh" class="column is-one-quarter">
+                                    </div>
+                                    <div id="dayLow" class="column is-one-quarter">
+                                    </div>
+                                    <div id="volume" class="column is-one-quarter">
+                                    </div>
+                                    <div id="yearHigh" class="column is-one-quarter">
+                                    </div>
+                                    <div id="yearLow" class="column is-one-quarter">
+                                    </div>
+                                    <div id="marketCap" class="column is-one-quarter">
                                     </div>
                                 </div>
-                                
-                            </div>  
-                            <button class="buttons" id="cleanBtn">DELETE</button>
-                        </section>   
                     </article>
                 </div>
-            </div> 
-            <!--Only Asika works above here  -->
-            <div class="tile is-parent newsTile">
-                <div class="tile is-child newsTile" style="height: 96x96">
-                    <article class="tile is-child notification newsTile">
-                            <p class="title is-size-4">NEWS</p>
-                            
-                                <!-- Content -->
-                                <div class="columns">
-                                    
-                                    <div class="card m-1" >
-                                        <div>
-                                            <figure class="image">
-                                                    <img id="imageX" alt="Placeholder image">  
-                                                    
-                                            </figure>
-                                        </div>
-                                        <div class="card-content column">
-                                            <p class="title is-4" id="headerX">NEWS HEADER</p>
-                                        </div>
-                                        <div class="content" id="contentX">
-                                            
-                                        </div>
-                                        <footer class="card-footer"> 
-                                            <div class="card-footer-item">
-                                                <span>
-                                                    View on <a id="sourceX">@publisher</a>
-                                                </span>
-                                            </div>
-                                        </footer>
-                                    
-                                    </div>
-                                    <div class="card m-1">
-                                        <div>
-                                            <figure class="image">
-                                                    <img id="imageY" alt="Placeholder image">            
-                                            </figure>
-                                        </div>
-                                        <div class="card-content column">
-                                            <p class="title is-4"id="headerY">NEWS HEADER</p>
-                                        </div>
-                                        <div class="content" id="contentY">
-                                            
-                                        </div>
-                                        <footer class="card-footer"> 
-                                            <div class="card-footer-item">
-                                                <span>
-                                                    View on  <a id="sourceY">@publisher</a>
-                                                </span>
-                                            </div>
-                                        </footer>
-                                    </div> 
-                                    <div class="card m-1">
-                                        <div>
-                                            <figure class="image">
-                                                    <img id="imageZ" alt="Placeholder image">  
-                                                    
-                                            </figure>
-                                        </div>
-                                        <div class="card-content column">
-                                            <p class="title is-4" id="headerZ">NEWS HEADER</p>
-                                        </div>
-                                        <div class="content" id="contentZ">
-                                            
-                                        </div>
-                                        <footer class="card-footer"> 
-                                            <div class="card-footer-item">
-                                                <span>
-                                                    View on <a id="sourceZ">@publisher</a>
-                                                </span>
-                                            </div>
-                                        </footer>
-                                    </div>                         
-                                </div>
+                <div class="tile is-child" style="height: 29vh">
+                    <article class="tile is-child notification is-light" style="position: relative;">
+                        <div class="chart-container container" style="width: 200; height: 200">
+                            <canvas id="myChart"></canvas>
+                        </div>
                     </article>
                 </div>
             </div>
-            <!--Only Walter works above here  -->
+        
+            <div class="tile is-parent">
+                <article class="tile is-child notification watchListTile">
+                    <section class="stock-list">
+                        <p class="title is-size-4" id="storage">WATCHLIST</p>
+                        
+                        <div class= card>
+                            <div class="card-content">
+                                <div id="ticket-text" class="content">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>  
+                        <button class="buttons" id="cleanBtn">DELETE</button>
+                    </section>   
+                </article>
+            </div>
+        </div> 
+        <div class="tile is-parent newsTile">
+            <div class="tile is-child newsTile" style="height: 96x96">
+                <article class="tile is-child notification newsTile">
+                    <p class="title is-size-4">NEWS</p>
+                        <div class="columns">
+                            
+                            <div class="card m-1" >
+                                <div>
+                                    <figure class="image">
+                                            <img id="imageX" alt="Placeholder image">  
+                                            
+                                    </figure>
+                                </div>
+                                <div class="card-content column">
+                                    <p class="title is-4" id="headerX">NEWS HEADER</p>
+                                </div>
+                                <div class="content" id="contentX">
+                                    
+                                </div>
+                                <footer class="card-footer"> 
+                                    <div class="card-footer-item">
+                                        <span>
+                                            View on <a id="sourceX">@publisher</a>
+                                        </span>
+                                    </div>
+                                </footer>
+                            
+                            </div>
+                            <div class="card m-1">
+                                <div>
+                                    <figure class="image">
+                                            <img id="imageY" alt="Placeholder image">            
+                                    </figure>
+                                </div>
+                                <div class="card-content column">
+                                    <p class="title is-4"id="headerY">NEWS HEADER</p>
+                                </div>
+                                <div class="content" id="contentY">
+                                    
+                                </div>
+                                <footer class="card-footer"> 
+                                    <div class="card-footer-item">
+                                        <span>
+                                            View on  <a id="sourceY">@publisher</a>
+                                        </span>
+                                    </div>
+                                </footer>
+                            </div> 
+                            <div class="card m-1">
+                                <div>
+                                    <figure class="image">
+                                            <img id="imageZ" alt="Placeholder image">  
+                                            
+                                    </figure>
+                                </div>
+                                <div class="card-content column">
+                                    <p class="title is-4" id="headerZ">NEWS HEADER</p>
+                                </div>
+                                <div class="content" id="contentZ">
+                                    
+                                </div>
+                                <footer class="card-footer"> 
+                                    <div class="card-footer-item">
+                                        <span>
+                                            View on <a id="sourceZ">@publisher</a>
+                                        </span>
+                                    </div>
+                                </footer>
+                            </div>                         
+                        </div>
+                </article>
+            </div>
+        </div>
 
-            <!-- Add any necessary script tags here -->
-            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-            <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-            <script src="./assets/JS/stockdata.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script src="./assets/JS/chart.js"></script>
-            <script src="./assets/JS/news.js"></script>
-            <script src="./assets/JS/javascript.js"></script>
-            <!-- Asika link  js here-->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="./assets/JS/stockdata.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="./assets/JS/chart.js"></script>
+        <script src="./assets/JS/news.js"></script>
+        <script src="./assets/JS/javascript.js"></script>
     </body>
 </html>

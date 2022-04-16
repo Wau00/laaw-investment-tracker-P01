@@ -1,11 +1,10 @@
-
 var stockForm = document.querySelector("#addStockForm");
 var stockAdd = document.querySelector("#tickerInput");
 var ticketEl = document.querySelector("#ticket-text");
 var deleteBtn = document.querySelector("#cleanBtn")
 var tickets = [];
 
-//
+
 function getTicket() {
     ticketEl.innerHTML=""
     for (var i=0; i < tickets.length; i++){
@@ -14,14 +13,9 @@ function getTicket() {
     var content = document.createElement("button");
         content.classList.add("buttons");
         content.textContent = ticketVal;
-        // content.setAttribute("",tickets[i]);
-        content.setAttribute('id',tickets[i]);
+        content.setAttribute('id','btnSelect');
         newdiv.appendChild(content);
         ticketEl.appendChild(newdiv);
-        
-        content.addEventListener('click', function(){ 
-            console.log("hello;" + ticketVal)
-        })
     }
 }  
 
@@ -31,6 +25,7 @@ function storeTicket(){
     tickets = storedTickets    
     }
     getTicket();
+    
 }
 
 function ticketStore () {
@@ -65,14 +60,3 @@ deleteBtn.addEventListener('click', function(){
     location.reload();
 })
 
-// ticketEl.addEventListener('click', function(){
-//  let newInput = document.querySelector('#btnSelect').value;
-//  console.log(newInput);
-
-// })
- 
-//  ticketEl.addEventListener('click', function() {
-//     let newInput = document.querySelector("#btnSelect");
-    
-//     console.log(newInput.value.innerHTML);
-//  });

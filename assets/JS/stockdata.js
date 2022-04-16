@@ -1,10 +1,9 @@
-// api key for stockdata.org
+
 let apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr"
 
 let stockSearch = document.querySelector("#search-button");
 
 stockSearch.addEventListener("click", getStockData);
-
 
 function getStockData () {
     let tickerInput = document.querySelector("#tickerInput").value;
