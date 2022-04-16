@@ -9,14 +9,19 @@ var tickets = [];
 function getTicket() {
     ticketEl.innerHTML=""
     for (var i=0; i < tickets.length; i++){
-    var ticketVal = tickets[i];
+     var ticketVal = tickets[i];
+    var newdiv = document.createElement('div');
     var content = document.createElement("button");
         content.classList.add("buttons");
         content.textContent = ticketVal;
-        // content.setAttribute("value",i);
-        content.setAttribute('id','btnSelect');
-        ticketEl.appendChild(content);
+        // content.setAttribute("",tickets[i]);
+        content.setAttribute('id',tickets[i]);
+        newdiv.appendChild(content);
+        ticketEl.appendChild(newdiv);
         
+        content.addEventListener('click', function(){ 
+            console.log("hello;" + ticketVal)
+        })
     }
 }  
 
@@ -51,10 +56,7 @@ if (stockAddText === ""){
 
 });
 
-ticketEl.addEventListener('click', function(){
-        ticketStore();
-        getTicket();
-});
+
 
 storeTicket()
 
@@ -68,3 +70,9 @@ deleteBtn.addEventListener('click', function(){
 //  console.log(newInput);
 
 // })
+ 
+//  ticketEl.addEventListener('click', function() {
+//     let newInput = document.querySelector("#btnSelect");
+    
+//     console.log(newInput.value.innerHTML);
+//  });
