@@ -3,10 +3,13 @@ let apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr"
 
 let stockSearch = document.querySelector("#search-button");
 
-stockSearch.addEventListener("click", getStockData);
-
-function getStockData () {
+stockSearch.addEventListener("click", () => { //made it so that this function listens to both a click of the search button as well as each individial button input
     let tickerInput = document.querySelector("#tickerInput").value;
+    getStockData(tickerInput);
+});
+
+function getStockData(tickerInput) {
+    console.log(tickerInput);
     let stockDataUrl = "https://api.stockdata.org/v1/data/quote?symbols=" + tickerInput + "&api_token=" + apiKey;
     fetch(stockDataUrl)
         .then(function (response) {

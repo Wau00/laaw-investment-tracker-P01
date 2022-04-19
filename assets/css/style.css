@@ -66,7 +66,7 @@ body {
     background-color: rgba(169, 171, 174, 255);
 }
 
-#btnSelect{
+.btnSelect{
     text-transform: uppercase;
     background-color: #061820;
     font-weight: 600;
