@@ -1,18 +1,10 @@
-/* #tittleLaw{
-    color: blue;
-    justify-content: center;
-    position: fixed;
-} */
-
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .chart-container {
     display: flex;
-    
     height: 150px;
-    /* flex: 0 0 auto; */
     width: 100%;
   }
 
@@ -107,4 +99,8 @@ body {
 #cleanBtn:hover{
     opacity: 1;
     transform: translateY(-1px) ;
+}
+
+#wait {
+    font-size: small;
 }

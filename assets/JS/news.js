@@ -1,4 +1,4 @@
-var api_token = "nlImfVRma9P5KANB90CtXrsSfaJOPg8quhKGBeqr"
+var api_token = "nlImfVRma9P5KANB90CtXrsSfaJOPg8quhKGBeqr";
 
 var searchInput = document.querySelector("#search-button");
 
@@ -6,7 +6,6 @@ searchInput.addEventListener("click", () => {
     let symbolInput = document.querySelector("#tickerInput").value;
     getStockNews(symbolInput);
 });
-
 
 function getStockNews(symbolInput){
    let api_url = 'https://api.marketaux.com/v1/news/all?symbols=' + symbolInput + '&filter_entities=true&language=en&api_token=' + api_token; 

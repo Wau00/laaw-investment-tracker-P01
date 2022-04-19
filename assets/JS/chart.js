@@ -37,8 +37,9 @@ function displayToChart(dataHistoric) {
     let stockDate = dataHistoric.data[i].date;
     stockDate = stockDate.slice(0, 7);
     labels.push(stockDate);
-  }
- data.labels = labels;
+  };
+
+  data.labels = labels;
 
   const config = {
     type: 'line',
@@ -53,11 +54,10 @@ function displayToChart(dataHistoric) {
     document.getElementById('myChart'),
     config
   );
-  
 };
 
 function destroyChart() {
   if(myChart != null){
     myChart.destroy();
- }
-}
+ };
+};

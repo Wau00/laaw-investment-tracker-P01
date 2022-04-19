@@ -1,22 +1,19 @@
-
-let apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr"
+let apiKey = "RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr";
 
 let stockSearch = document.querySelector("#search-button");
 
-stockSearch.addEventListener("click", () => { //made it so that this function listens to both a click of the search button as well as each individial button input
+stockSearch.addEventListener("click", () => {
     let tickerInput = document.querySelector("#tickerInput").value;
     getStockData(tickerInput);
 });
 
 function getStockData(tickerInput) {
-    console.log(tickerInput);
     let stockDataUrl = "https://api.stockdata.org/v1/data/quote?symbols=" + tickerInput + "&api_token=" + apiKey;
     fetch(stockDataUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             let tickerName = data.data[0].name
             let exchange = data.data[0].exchange_short
             let price = data.data[0].price
@@ -42,9 +39,5 @@ function getStockData(tickerInput) {
             $("#yearHigh").text("52-Week High: " + yearHigh);
             $("#yearLow").text("52-Week Low: " + yearLow);
             $("#marketCap").text("Market Cap($): " + marketCap);
-
-        })
-
-        
-}
-
+        });
+};
