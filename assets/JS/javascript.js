@@ -13,11 +13,13 @@ function getTicket() {
         var content = document.createElement("button");
         content.classList.add("buttons", "btnSelect");
         content.textContent = ticketVal;
-        content.addEventListener("click", function() { //this allows for the newly created button to get passed in as an argument into the stockdata.js function. Follow this exact syntax for the other JS files when adding in their event listeners to the watchlist buttons. add that within this for-loop.
+        content.addEventListener("click", function() {
             getStockData(this.textContent)});
         content.addEventListener("click", function() {
             destroyChart();
             getChartData(this.textContent, moment().format("YYYY-MM"))});
+        content.addEventListener("click", function() {
+            getStockNews(this.textContent)});
         newdiv.appendChild(content);
         ticketEl.appendChild(newdiv);
     }
@@ -29,7 +31,6 @@ function storeTicket(){
     tickets = storedTickets    
     }
     getTicket();
-    
 }
 
 function ticketStore () {
@@ -55,12 +56,9 @@ if (stockAddText === ""){
 
 });
 
-
-
 storeTicket()
 
 deleteBtn.addEventListener('click', function(){
     localStorage.clear('tickets', 'tickets');
     location.reload();
 })
-
