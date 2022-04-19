@@ -40,20 +40,18 @@ function ticketStore () {
 stockForm.addEventListener("submit", function(event){
     event.preventDefault();
 
-var stockAddText = stockAdd.value.trim();
+    var stockAddText = stockAdd.value.trim();
 
-if (stockAddText === ""){
-    return;
-}
-    if(stockAddText.length > 4){
-    return;
-    }
-    tickets.push(stockAddText);
+    if (stockAddText === "" || stockAddText.length > 4){
+        return;
+    };
+
+    if (!tickets.includes(stockAddText)) {
+        tickets.push(stockAddText);
+    };
     
-
     ticketStore();
     getTicket();
-
 });
 
 storeTicket()
