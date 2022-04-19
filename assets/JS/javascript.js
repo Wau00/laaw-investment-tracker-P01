@@ -15,6 +15,9 @@ function getTicket() {
         content.textContent = ticketVal;
         content.addEventListener("click", function() { //this allows for the newly created button to get passed in as an argument into the stockdata.js function. Follow this exact syntax for the other JS files when adding in their event listeners to the watchlist buttons. add that within this for-loop.
             getStockData(this.textContent)});
+        content.addEventListener("click", function() {
+            destroyChart();
+            getChartData(this.textContent, moment().format("YYYY-MM"))});
         newdiv.appendChild(content);
         ticketEl.appendChild(newdiv);
     }
