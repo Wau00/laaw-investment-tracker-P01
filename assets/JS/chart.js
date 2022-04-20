@@ -2,12 +2,14 @@ const searchButton = document.querySelector("#search-button");
 
 let myChart;
 
-searchButton.addEventListener("click", destroyChart);
-searchButton.addEventListener("click", getChartData);
-
-function getChartData() {
+searchButton.addEventListener("click", () => {
   let tickerInput = document.querySelector("#tickerInput").value;
   let currentYearAndMonth = moment().format("YYYY-MM");
+  destroyChart();
+  getChartData(tickerInput, currentYearAndMonth);
+});
+
+function getChartData(tickerInput, currentYearAndMonth) {
   let chartDataURL = `https://api.stockdata.org/v1/data/intraday?symbols=${tickerInput}&date_to=${currentYearAndMonth}&interval=month&sort=asc&api_token=RamgPwgAcspYJX9SidkgGi2vtsrXoKmM2115G1fr`; 
 
   fetch(chartDataURL).then(function(response) {
@@ -35,8 +37,9 @@ function displayToChart(dataHistoric) {
     let stockDate = dataHistoric.data[i].date;
     stockDate = stockDate.slice(0, 7);
     labels.push(stockDate);
-  }
- data.labels = labels;
+  };
+
+  data.labels = labels;
 
   const config = {
     type: 'line',
@@ -51,11 +54,10 @@ function displayToChart(dataHistoric) {
     document.getElementById('myChart'),
     config
   );
-  
 };
 
 function destroyChart() {
   if(myChart != null){
     myChart.destroy();
- }
-}
+ };
+};
